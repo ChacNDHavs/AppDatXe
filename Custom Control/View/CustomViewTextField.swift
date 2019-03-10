@@ -11,7 +11,6 @@ import UIKit
 class CustomViewTextField: UIView {
     
     @IBOutlet var containerView: UIView!
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var textField: UITextField!
     
@@ -25,16 +24,66 @@ class CustomViewTextField: UIView {
     var _marginSide: CGFloat = 16
     var _iconMulti: CGFloat = 0.8
     var _spaceBetween: CGFloat = 16
+    var _textSize: CGFloat = 14
+    var _placeHolderText: String = ""
+    var _placeHolder = ""
+    var _textColor = UIColor.black
+    var _clearWhenBegin : Bool = true
+    
+    @IBInspectable
+    var textSize: CGFloat {
+        set (newValue) {
+            _textSize = newValue
+            textField.font = textField.font?.withSize(_textSize)
+        } get {
+            return _textSize
+        }
+    }
+    
+    @IBInspectable
+    var clearWhenBegin: Bool {
+        set (newValue) {
+            _clearWhenBegin = newValue
+            textField.clearsOnBeginEditing = _clearWhenBegin
+        } get {
+            return _clearWhenBegin
+        }
+    }
+    
+    @IBInspectable
+    var placeHolderText: String {
+        set (newValue) {
+            _placeHolderText = newValue
+            textField.placeholder = _placeHolderText
+        } get {
+            return _placeHolderText
+        }
+    }
+    @IBInspectable
+    var placeHolder: String {
+        set (newValue) {
+            _placeHolder = newValue
+            textField.placeholder = _placeHolder
+        } get {
+            return _placeHolder
+        }
+    }
+    @IBInspectable
+    var textColor: UIColor {
+        set (newValue) {
+            _textColor = newValue
+            textField.textColor = _textColor
+        } get {
+            return _textColor
+        }
+    }
 
     @IBInspectable
     var marginSide: CGFloat {
         set (newValue) {
             _marginSide = newValue
-//            stackView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: _marginSide).isActive = true
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -_marginSide).isActive = true
-            iconImage.topAnchor.constraint(equalTo: self.stackView.topAnchor, constant: _marginSide).isActive = true
-            iconImage.bottomAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: -_marginSide).isActive = true
+            iconImage.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -(2 * _marginSide)).isActive = true
+            textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -_marginSide).isActive = true
         } get {
             return _marginSide
         }
@@ -44,7 +93,9 @@ class CustomViewTextField: UIView {
     var spaceBetween: CGFloat {
         set (newValue) {
             _spaceBetween = newValue
-            stackView.spacing = _spaceBetween
+            iconImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: _spaceBetween).isActive = true
+            textField.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: _spaceBetween).isActive = true
+            
         } get {
             return _spaceBetween
         }
@@ -86,7 +137,7 @@ class CustomViewTextField: UIView {
         set (newValue) {
             _cornerUseMulti = newValue
             if (_cornerUseMulti && !circleView) {
-                layer.cornerRadius = UIScreen.main.bounds.width / 32
+                layer.cornerRadius = UIScreen.main.bounds.width / 40
             }
         } get {
             return _cornerUseMulti

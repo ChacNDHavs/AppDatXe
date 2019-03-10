@@ -33,7 +33,7 @@ class CustomView: UIView {
         set (newValue) {
             _cornerUseMulti = newValue
             if (_cornerUseMulti && !circleView) {
-                layer.cornerRadius = UIScreen.main.bounds.width / 32
+                layer.cornerRadius = UIScreen.main.bounds.width / 40
             }
         } get {
             return _cornerUseMulti
