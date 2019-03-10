@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomViewTextField" customModule="AppDatXe" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="6Cr-Od-LjB"/>
+                <outlet property="iconImage" destination="vZ2-mA-mf8" id="rN5-hV-QPG"/>
+                <outlet property="stackView" destination="Ghh-Mj-iZM" id="qoM-iS-Dxl"/>
+                <outlet property="textField" destination="0m5-t5-nZS" id="TvG-2J-jG6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" misplaced="YES" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1089" height="62"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-zu-Edo" customClass="CustomView" customModule="AppDatXe" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="335" height="42"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-Mj-iZM">
+                            <rect key="frame" x="0.0" y="0.0" width="67" height="42"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_free" translatesAutoresizingMaskIntoConstraints="NO" id="vZ2-mA-mf8">
+                                    <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="vZ2-mA-mf8" secondAttribute="height" multiplier="1:1" id="oK4-oy-mQA"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0m5-t5-nZS">
+                                    <rect key="frame" x="42" y="0.0" width="25" height="42"/>
+                                    <color key="backgroundColor" red="0.16862745100000001" green="0.72549019609999998" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ghh-Mj-iZM" secondAttribute="trailing" constant="16" id="GbS-Eq-0lq"/>
+                        <constraint firstAttribute="bottom" secondItem="Ghh-Mj-iZM" secondAttribute="bottom" constant="16" id="XZ1-cQ-5Dd"/>
+                        <constraint firstItem="Ghh-Mj-iZM" firstAttribute="top" secondItem="gFC-zu-Edo" secondAttribute="top" id="axs-lp-cdp"/>
+                        <constraint firstItem="Ghh-Mj-iZM" firstAttribute="leading" secondItem="gFC-zu-Edo" secondAttribute="leading" constant="16" id="oo0-hU-ZF7"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="GbS-Eq-0lq"/>
+                            <exclude reference="oo0-hU-ZF7"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gFC-zu-Edo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DX0-ud-ALC"/>
+                <constraint firstAttribute="bottom" secondItem="gFC-zu-Edo" secondAttribute="bottom" id="MO2-CP-TtX"/>
+                <constraint firstItem="gFC-zu-Edo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VGt-ox-ntG"/>
+                <constraint firstAttribute="trailing" secondItem="gFC-zu-Edo" secondAttribute="trailing" id="oph-aN-Dot"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="185.59999999999999" y="302.24887556221893"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_free" width="8.5" height="8.5"/>
+    </resources>
+</document>
